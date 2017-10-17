@@ -240,7 +240,7 @@ abstract class AbstractCsv implements JsonSerializable, IteratorAggregate
      */
     public function newReader($open_mode = 'r+')
     {
-        return $this->newInstance(Reader::class, $open_mode);
+        return $this->newInstance('\League\Csv\Reader', $open_mode);
     }
 
     /**
