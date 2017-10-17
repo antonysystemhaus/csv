@@ -224,12 +224,12 @@ abstract class AbstractCsv implements JsonSerializable, IteratorAggregate
      *
      * @param string $open_mode the file open mode flag
      *
-     * @return Writer
-     */
-    public function newWriter($open_mode = 'r+')
-    {
-        return $this->newInstance(Writer::class, $open_mode);
-    }
+     * @return AbstractCsv|Writer
+	 */
+	public function newWriter($open_mode = 'r+')
+	{
+		return $this->newInstance('\League\Csv\Writer', $open_mode);
+	}
 
     /**
      * Return a new {@link Reader} instance from a {@link AbstractCsv} object

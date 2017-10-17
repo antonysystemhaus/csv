@@ -200,10 +200,11 @@ trait QueryFilter
      *
      * @return bool
      */
-    protected function isBomStrippable()
-    {
-        return !empty($this->getInputBOM()) && $this->strip_bom;
-    }
+	protected function isBomStrippable()
+	{
+		$tmp = $this->getInputBOM();
+		return !empty($tmp) && $this->strip_bom;
+	}
 
     /**
      * Return the Iterator without the BOM sequence
