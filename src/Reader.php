@@ -150,7 +150,7 @@ class Reader extends AbstractCsv
 
         return $this->applyCallable(new MapIterator($this->getQueryIterator(), $select_column), $callable);
     }
-
+    
     /**
      * Retrieve CSV data as pairs
      *
@@ -175,10 +175,10 @@ class Reader extends AbstractCsv
      *
      * @return array
      */
-    public function fetchPairsWithoutDuplicates($offset_index = 0, $value_index = 1, callable $callable = null)
+    /*public function fetchPairsWithoutDuplicates($offset_index = 0, $value_index = 1, callable $callable = null)
     {
         return iterator_to_array($this->fetchPairs($offset_index, $value_index, $callable), true);
-    }
+    }*/
 
     /**
      * Fetches the next key-value pairs from a result set (first
@@ -194,7 +194,7 @@ class Reader extends AbstractCsv
      *
      * @return Generator
      */
-    public function fetchPairs($offset_index = 0, $value_index = 1, callable $callable = null)
+    /*public function fetchPairs($offset_index = 0, $value_index = 1, callable $callable = null)
     {
         $offset_index = $this->validateInteger($offset_index, 0, 'the offset column index must be a positive integer or 0');
         $value_index = $this->validateInteger($value_index, 0, 'the value column index must be a positive integer or 0');
@@ -213,7 +213,7 @@ class Reader extends AbstractCsv
         foreach ($iterator as $row) {
             yield $row[0] => $row[1];
         }
-    }
+    }*/
 
     /**
      * Fetch the next row from a result set
